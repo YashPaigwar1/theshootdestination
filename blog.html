@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSD | Blogs</title>
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+<style>
+    .blog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure responsive grid */
+    gap: 20px; /* Increased gap for better spacing */
+    margin: 10px 0; /* Reduced top margin */
+    justify-items: center; /* Centers content horizontally */
+    padding: 0 15px; /* Add some padding to the sides */
+    max-height: 600px; /* Limit the height of the container */
+    overflow-y: auto; /* Add scrolling if content exceeds the height */
+}
+    .blog-details-section {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        background-color: #f9f9f9;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 100%; /* Ensure the card takes full width of the container */
+        max-width: 350px; /* Limit the card's max width */
+        min-height: 320px;
+        transition: transform 0.3s ease;
+        box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    }
+
+    .blog-details-section:hover {
+        transform: scale(1.03); /* Slightly scale the card on hover */
+    }
+
+    .blog-details-content img {
+        width: 100%; /* Ensure image takes full width of the card */
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .blog-details-content img:hover {
+        transform: scale(1.05); /* Slight zoom effect on image hover */
+    }
+
+    .blog-details-content h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #007bff;
+        margin: 15px 0;
+        transition: color 0.3s ease;
+    }
+
+    .blog-details-content h5:hover {
+        color: #0056b3; /* Change color on hover */
+    }
+
+    .blog-details-content p {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.5;
+        text-align: center; /* Center align text */
+        overflow: hidden;
+    }
+
+    .read-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 15px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .read-more-btn:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Responsive Design for Small Screens */
+    @media (max-width: 768px) {
+        .blog-container {
+            padding: 0 10px; /* Reduce side padding on smaller screens */
+        }
+
+        .blog-details-section {
+            max-width: 100%; /* Remove max-width on smaller screens */
+            padding: 15px; /* Adjust padding on smaller screens */
+        }
+
+        .blog-details-content h5 {
+            font-size: 1.25rem; /* Slightly smaller title on small screens */
+        }
+
+        .blog-details-content p {
+            font-size: 0.9rem; /* Smaller text on small screens */
+        }
+
+        .read-more-btn {
+            font-size: 0.9rem; /* Smaller button text on small screens */
+        }
+    }
+
+    /* Mobile view adjustments (unchanged) */
+    .navbar-toggler {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+
+    @media (max-width: 991px) {
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-toggler {
+            margin-left: auto;
+        }
+
+        .text-white {
+            font-size: 1rem;
+        }
+    }
+
+    /* Desktop view adjustments */
+    @media (min-width: 992px) {
+        .navbar-brand {
+            margin-right: auto; /* Push the brand to the left */
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Align all nav items to the right */
+        }
+
+        .navbar-toggler {
+            display: none; /* Hide the hamburger menu on desktop */
+        }
+    }
+
+    /* Adjust the position of the title */
+    .header-area h5 {
+        margin-left: 10px; /* Adjust horizontal spacing */
+        margin-top: 5px; /* Adjust vertical spacing */
+        font-size: 0.9rem; /* Optional: Slightly change font size */
+        line-height: 1.5; /* Ensure proper alignment with the logo */
+    }
+
+    .section_padding_100 {
+        text-align: center; /* Centers the text horizontally */
+        margin-bottom: 30px; /* Adds space below the title */
+    }
+
+    /* Optional: You can also use flexbox to center both horizontally and vertically if needed */
+    .section_padding_100 h1 {
+        font-size: 2rem; /* Adjust font size if necessary */
+        font-weight: bold;
+        color: #007bff; /* Change color if desired */
+    }
+    .header-area h1 {
+    margin-top: 10px; /* Reduced top margin */
+    margin-bottom: 10px; /* Optional: Reduce bottom margin if needed */
+    font-size: 2rem; /* Adjust font size if necessary */
+    font-weight: bold;
+    color: #007bff; /* Change color if desired */
+}
+
+.section_padding_100 {
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 10px; /* Reduced space below the title */
+}
+
+.section_padding_100 h1 {
+    font-size: 2rem; /* Adjust font size if necessary */
+    font-weight: bold;
+    color: #007bff; /* Change color if desired */
+    margin-top: 0; /* Removed extra space above the h1 */
+}
+</style>
+
+
+  <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="showbox">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>
+        </div>
+        <div class="questions-area text-center">
+            <p>Did you know?</p>
+            <ul>
+                <li>The largest photography competition is 353,768 entries.</li>
+                <li>Photography is the toughest profession in the world.</li>
+                <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
+                <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
+                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gradient-background-overlay"></div>
+
+<!-- Header -->
+<header class="header-area bg-img" style="background-image: url(img/bg-img/14.jpg);">
+    <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 h-100">
+                <div class="main-menu h-100">
+                    <nav class="navbar h-100 navbar-expand-lg">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html" style="color: aliceblue;">
+                            <img src="img/img/logotsd1.png" width="100px" height="15px" alt="Logo"> 
+                            <h5 class="text-white mb-0 ms-2">The Shoot Destination</h5>
+                        </a>
+                        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i> 
+                        </button>
+                        <div class="collapse navbar-collapse" id="studioMenu">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="about-me.html">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                                <li class="nav-item"><a class="nav-link" href="oursets.html">Our Sets</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+ <div class="social-sidebar-area">
+      <!-- Social Area -->
+      <div class="social-info-area">
+        <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Facebook"
+          ><i class="fa fa-facebook" aria-hidden="true"></i>
+          <span>Facebook</span></a
+        >
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Twitter"
+          ><i class="fa fa-twitter" aria-hidden="true"></i>
+          <span>Twitter</span></a
+        >
+        <a
+          href="#"
+          data-toggle="tooltip"
+          data-placement="right"
+          title="Pinterest"
+          ><i class="fa fa-pinterest" aria-hidden="true"></i>
+          <span>Pinterest</span></a
+        >
+        <a href="#" data-toggle="tooltip" data-placement="right" title="Behance"
+          ><i class="fa fa-behance" aria-hidden="true"></i>
+          <span>Behance</span></a
+        >
+      </div>
+    </div>
+    <div class="container my-5">
+        <h1 class="section_padding_100">OUR BLOG POSTS</h1>
+        <div id="blog-container" class="blog-container"></div>
+    </div>
+
+     <footer class="footer-area">
+        <div class="container-fluid h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100">
+                    <div class="footer-content h-100 d-md-flex align-items-center justify-content-between">
+                        <div class="single-footer-content">
+                            <img src="img/core-img/map.png" alt="">
+                            <a href="#">Blvd Libertad, 34 m05200 Arévalo</a>
+                        </div>
+                        <div class="single-footer-content">
+                            <img src="img/core-img/smartphone.png" alt="">
+                            <a href="#">0034 37483 2445 322</a>
+                        </div>
+                        <div class="single-footer-content">
+                            <img src="img/core-img/envelope-2.png" alt="">
+                            <a href="#">hello@company.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script>
+        fetch('fetch_blogs.php')
+            .then(response => response.json())
+            .then(data => {
+                const blogContainer = document.getElementById('blog-container');
+                if (data && data.length) {
+                    data.forEach(blog => {
+                        const blogDiv = document.createElement('div');
+                        blogDiv.className = 'blog-details-section';
+                        blogDiv.innerHTML = `
+                            <div class="blog-details-content">
+                                <img src="${blog.image || 'img/default.jpg'}" alt="${blog.title || 'Blog'}">
+                                <h5>${blog.title || 'No Title'}</h5>
+                                <p>${(blog.content || 'No content available').slice(0, 150)}...</p>
+                                <a href="blog_detail.php?id=${blog.id}" class="read-more-btn">Read More</a>
+                            </div>
+                        `;
+                        blogContainer.appendChild(blogDiv);
+                    });
+                } else {
+                    blogContainer.innerHTML = '<p>No blogs found.</p>';
+                }
+            })
+            .catch(() => {
+                document.getElementById('blog-container').innerHTML = '<p>Failed to load blogs. Try again later.</p>';
+            });
+    </script>
+</body>
+</html>

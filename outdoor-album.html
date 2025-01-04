@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TSD | Outdoor Album</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+  <style>
+    .album-card {
+    margin: 15px; /* Adds space around each album card */
+    display: inline-block; /* Ensures album cards align properly */
+    width: 100%; /* Adjust width to fit 4 cards per row with spacing */
+    vertical-align: top;
+    height:370px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for aesthetics */
+    border-radius: 5px; /* Optional: Rounds corners */
+    overflow: hidden; /* Ensures content stays inside the card */
+}
+
+/* Uniform size for album images */
+.album-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Container for album cards */
+.album-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap onto the next row */
+    justify-content: space-between; /* Adds equal spacing between cards */
+    gap: 20px; /* Adds spacing between cards (alternative to margin) */
+}
+
+    /* Mobile view (unchanged) */
+    .navbar-toggler {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        color: white;
+        border: none;
+        background-color: transparent;
+    }
+
+    @media (max-width: 991px) {
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-toggler {
+            margin-left: auto;
+        }
+
+        .text-white {
+            font-size: 1rem;
+        }
+    }
+
+    /* Desktop view (align all to the right) */
+    @media (min-width: 992px) {
+        .navbar-brand {
+            margin-right: auto; /* Push the brand to the left */
+        }
+
+        .navbar-nav {
+            margin-left: auto; /* Align all nav items to the right */
+        }
+
+        .navbar-toggler {
+            display: none; /* Hide the hamburger menu on desktop */
+        }
+    }
+
+    /* Adjust the position and size of the title */
+    .header-area h5 {
+        margin-left: 10px; /* Adjust horizontal spacing */
+        margin-top: 5px; /* Adjust vertical spacing */
+        font-size: 0.9rem; /* Smaller font size */
+        line-height: 1.2; /* Better alignment */
+        color: aliceblue; /* Ensure consistent color visibility */
+        font-weight: normal; /* Optional: Adjust font weight for a sleeker look */
+    }
+</style>
+
+<style>
+    .social-info-area a{
+      color: blue;
+      transition: color 0.3 ease-in-out;
+      text-decoration: none;
+    }
+      
+    .social-info-area a:hover{
+      color:#141212;
+    }
+    
+  </style>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="showbox">
+            <div class="loader">
+                <svg class="circular" viewBox="25 25 50 50">
+                    <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+                </svg>
+            </div>
+        </div>
+        <div class="questions-area text-center">
+            <p>Did you know?</p>
+            <ul>
+                <li>The largest photography competition is 353,768 entries.</li>
+                <li>Photography is the toughest profession in the world.</li>
+                <li>The world’s largest photo album by dimensions was 13 ft 11.5 in x 17 ft.</li>
+                <li>The world’s largest photo mosaic featured 176,175 pictures.</li>
+                <li>The world’s largest camera lens was a 5200mm lens attached to a canon.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="gradient-background-overlay"></div>
+
+<!-- Header -->
+<header class="header-area bg-img" style="background-image: url(img/bg-img/14.jpg);">
+    <div class="container-fluid h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12 h-100">
+                <div class="main-menu h-100">
+                    <nav class="navbar h-100 navbar-expand-lg">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html" style="color: aliceblue;">
+                            <img src="img/img/logotsd1.png" width="100px" height="15px" alt="Logo"> 
+                            <h5 class="text-white mb-0 ms-2">The Shoot Destination</h5>
+                        </a>
+                        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#studioMenu" aria-controls="studioMenu" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fa fa-bars"></i> 
+                        </button>
+                        <div class="collapse navbar-collapse" id="studioMenu">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="about-me.html">About</a></li>
+                                <li class="nav-item"><a class="nav-link" href="packages.html">Packages</a></li>
+                                <li class="nav-item"><a class="nav-link" href="oursets.html">Our Sets</a></li>
+                                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+    <!-- Social Sidebar Area -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="social-sidebar-area">
+    <!-- Social Area -->
+    <div class="social-info-area">
+      <a
+        href="https://www.youtube.com/channel/UCVvpdvsVURpM8fX8VZiZ1sw"
+        target="_blank"
+        data-toggle="tooltip"
+        data-bs-placement="right"
+        title="Youtube"
+        ><i class="fa fa-youtube-play" aria-hidden="true"></i> <span>Youtube</span></a
+      >
+      <a
+        href="https://in.pinterest.com/the_shootdestination"
+        target="_blank"
+        data-toggle="tooltip"
+        data-bs-placement="right"
+        title="Pinterest"
+        ><i class="fa fa-pinterest" aria-hidden="true"></i>
+        <span>Pinterest</span></a
+      >
+      <a
+        href="https://www.instagram.com/theshootdestination_"
+        target="_blank"
+        data-toggle="tooltip"
+        data-bs-placement="right"
+        title="Instagram"
+        ><i class="fa fa-instagram" aria-hidden="true"></i>
+        <span>Instagram</span></a
+      >
+      <a
+        href="https://www.facebook.com/theshootlocation"
+        target="_blank"
+        data-toggle="tooltip"
+        data-bs-placement="right"
+        title="Facebook"
+        ><i class="fa fa-facebook" aria-hidden="true"></i>
+        <span>Facebook</span></a
+      >
+    </div>
+  </div>
+
+    <!-- Albums Section -->
+    <div class="container py-5">
+      <h1 class="text-center section_padding_100">OUTDOOR SHOOT ALBUM</h1>
+      <div id="albums-container" class="row">
+        <!-- Albums will be dynamically inserted here -->
+      </div>
+    </div>
+
+    <!-- Carousel Modal -->
+    <div class="modal fade" id="carouselModal" tabindex="-1" aria-labelledby="carouselModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="carouselModalLabel">Album Preview</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <!-- Images will be dynamically inserted -->
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselImages" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container-fluid h-100">
+          <div class="row h-100">
+            <div class="col-12 h-100">
+              <div
+                class="footer-content h-100 d-md-flex align-items-center justify-content-between"
+              >
+               <!-- Single Footer Content -->
+               <div class="single-footer-content">
+                <img src="img/img/logotsd1.png" width="5%" alt="" />
+                <a href="contact.html">The Shoot Destination, Ramtek</a>
+              </div>
+              <!-- Single Footer Content -->
+              <div class="single-footer-content mx-1">
+                <i class="fas fa-phone" style="color: white;"></i>
+                <a href="contact.html"> 8830241379</a>
+              </div>
+              <!-- Single Footer Content -->
+              <div class="single-footer-content ">
+                <!-- <img src="img/core-img/envelope-2.png" style="color: white;" alt="" /> -->
+                <i class="fa-solid fa-file-pdf" style="color:white;"></i>
+                <a href="contact.html">Get Pdf</a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+   
+    <p class="text-center text-dark">
+        &copy; Copyright 2025 <strong>theshootdestination</strong> | All rights reserved
+       <br>This Website is made
+       by <strong>BharatSoft Application</strong><br> Business No.7218923124
+     </p>
+    <!-- JavaScript & jQuery -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script> <!-- Correct JS library -->
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+
+    <!-- JavaScript -->
+   <!-- Album Section -->
+<script>
+    fetch('getOutdoorAlbums.php')
+        .then(response => response.json())
+        .then(albums => {
+            const albumContainer = document.querySelector('#albums-container');
+            albums.forEach(album => {
+                const albumCard = document.createElement('div');
+                albumCard.className = 'col-lg-3 col-md-4 col-sm-6';
+
+                // Get the first image path for the preview image
+                const imageUrl = album.image_paths && album.image_paths.length > 0 ? album.image_paths[0] : 'Admin/uploads/outdoor_albums/nmc_logo.jpg';
+
+                albumCard.innerHTML = `
+                    <div class="card album-card">
+                        <img src="${imageUrl}" class="card-img-top" alt="${album.title}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${album.title}</h5>
+                            <button class="btn btn-primary read-more" data-bs-toggle="modal" data-bs-target="#carouselModal" data-images="${album.image_paths.join(',')}">
+                                View Album
+                            </button>
+                        </div>
+                    </div>
+                `;
+                albumContainer.appendChild(albumCard);
+            });
+        })
+        .catch(error => console.error('Error fetching albums:', error));
+
+    document.querySelector('#carouselModal').addEventListener('show.bs.modal', function (event) {
+        const button = event.relatedTarget;
+        const images = button.getAttribute('data-images').split(',');
+        const carouselInner = document.querySelector('.carousel-inner');
+        carouselInner.innerHTML = '';
+
+        if (images.length) {
+            images.forEach((image, index) => {
+                const isActive = index === 0 ? 'active' : '';
+                carouselInner.innerHTML += `
+                    <div class="carousel-item ${isActive}">
+                        <img src="${image}" class="d-block w-100" alt="Album image">
+                    </div>`;
+            });
+        } else {
+            carouselInner.innerHTML = '<div class="text-center">No images available</div>';
+        }
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-toggle="tooltip"]')
+      );
+      tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+        new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+ </body>
+</html>
